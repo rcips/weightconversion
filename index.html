@@ -1,0 +1,83 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=League+Spartan&family=Raleway:wght@100&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
+		</style>
+
+		<title>Simple Conversion</title>
+	</head>
+
+	<body>
+		<div
+			class="container-fluid p-0 align-items-center bg-danger"
+			style="
+				border: 1px solid black;
+				width: 50%;
+				margin-top: 10%;
+				border-radius: 25px;
+			"
+		>
+			<div class="container mt-5 text-center text-light">
+				<h1 style="font-family: 'League Spartan', sans-serif">
+					Weight Converter
+				</h1>
+			</div>
+
+			<form action="#" class="container mt-2 row">
+				<label style="color: white">Kilograms</label>
+				<div class="col fs-md-3">
+					<input type="number" id="kilograms" placeholder="Enter Kilograms" />
+				</div>
+				<select id="units" class="col-md">
+					<option value="2.2046">Pounds</option>
+					<option value="1000">Grams</option>
+					<option value="35.274">Ounces</option>
+					<option value="0.1574">Stones</option>
+				</select>
+
+				<button
+					class="btn btn-warning btn-md mt-3 rounded-12px"
+					onclick="convertWeight()"
+				>
+					Convert
+				</button>
+
+				<h3
+					class="container mt-3 text-light"
+					style="font-family: 'Kanit', sans-serif"
+				>
+					Answer : <span id="convert"></span>
+				</h3>
+
+				<script>
+					function convertWeight() {
+						let kilo = document.getElementById("kilograms").value
+						let unit = document.getElementById("units").value
+						let ans = Number(kilo) * Number(unit)
+
+						document.getElementById("convert").innerHTML = ans
+					}
+				</script>
+			</form>
+		</div>
+	</body>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"
+	></script>
+</html>
